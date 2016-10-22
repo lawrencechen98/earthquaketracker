@@ -1,0 +1,80 @@
+body{
+	font-family: 'open sans';
+	color: #797979;
+
+	background: url(grand-canyon.jpg);
+	background-size: cover;
+}
+.banner{
+	background-color: black;
+	opacity: 0.7;
+	width: 100%;
+	color: white;
+	text-align: center;
+	font-family: "Lucida Grande";
+	padding: 10px;
+}
+h1{
+	margin: 0px;
+	font-size: 75px;
+	text-shadow: 3px 4px 3px #79797;
+	color: white;
+	font-family: 'Titillium Web', sans-serif;
+}
+h3{
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	padding-top: 4px;
+	color: white;
+	text-align: center;
+}
+#map{
+  height:70vh;
+  padding-left: 0;
+	margin-bottom: 30px;
+  border-style:hidden;
+  box-shadow: 3px 3px 3px #B4B4B5;
+}
+
+table{
+	 color: white;
+   overflow-y:scroll;
+   height:70vh;
+   background-color: black;
+	 opacity: 0.7;
+	 display: block;
+}
+
+.table-hover>tbody>tr:hover{
+	background-color: #2b2b2b;
+}
+.table-hover>tbody>tr:focus{
+	background-color: #2b2b2b;
+}
+
+.Green{
+	background-color: #51a057;
+}
+
+.Yellow{
+	background-color: #b2ae3c;
+}
+
+.Orange{
+	background-color: #b27d3c;
+}
+
+.Red{
+	background-color: #af3f3f;
+}
+
+.container{
+	width: 95%;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+.logo img{
+	height: 75px;
+	border-radius: 100%;
+}

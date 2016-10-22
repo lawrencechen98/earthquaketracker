@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- JQuery CDN -->
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200" rel="stylesheet">
+
+    <title>Earthquake Tracker</title>
+  </head>
+  <body>
+
+  <div class="banner">
+
+
+    <div class="row">
+      <div class = "logo col-md-1">
+      <img src="https://pbs.twimg.com/profile_images/646071633069760513/SxqrJYXM.png"/>
+      </div>
+      <div class = "col-xs-12 col-md-10">
+      <h1>Earthquake Tracker</h1>
+
+      </div>
+      <div class = "col-md-1">
+      </div>
+      </div>
+
+  </div>
+    <div class="container">
+      <div class="row">
+          <div class="col-xs-0 col-lg-5"></div>
+          <h3 class="col-xs-12 col-lg-7">All Earthquakes in the Past 24 Hours</h3>
+        <div id="map" class="col-xs-12 col-lg-5"></div>
+        <div class= "col-lg-7">
+
+        <table class="table table-hover">
+          <thead>
+            <th>
+              Time
+            </th>
+            <th>
+              Magnitude
+            </th>
+            <th>
+              Location
+            </th>
+            <th>
+              Tsunami Threat
+            </th>
+            <th class="hidden-xs">
+              Coordinates
+            </th>
+            <th>
+              Alert Status
+            </th>
+            <th>
+              Details
+            </th>
+          </thead>
+          <tbody id="earthquake-data-table" >
+
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <script id="earthquake-data-template" type="text/x-handlebars-template">
+      <tr class="earthquake-table-row {{properties.alert}} ">
+        <td>
+          {{properties.time}}
+        </td>
+        <td>
+          {{properties.mag}}
+        </td>
+        <td>
+          {{properties.place}}
+        </td>
+        <td>
+          {{properties.tsunami}}
+        </td>
+        <td id="coordinates" class="hidden-xs">
+          {{geometry.coordinates}}
+        </td>
+        <td>
+          {{properties.alert}}
+        </td>
+        <td>
+          <a href="{{properties.url}}" target="_blank" class="glyphicon glyphicon-info-sign"></a>
+        </td>
+      </tr>
+    </script>
+    <!-- handlebars script -->
+    <script src="handlebars-v4.0.5.js"></script>
+    <script src="initmap.js"></script>
+    <!-- google maps script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEBDYZrzJvRTUUTakDB-eoAu5b55x1Xp8&callback=initMap"
+ type="text/javascript"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
